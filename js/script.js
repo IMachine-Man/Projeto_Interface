@@ -17,46 +17,16 @@ document.querySelector('#btnSignUp').addEventListener('click', () => {
 })
 
 /* LOGAR */
-async function logar(){
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('senha').value;
 
-    if(!validate(email, password)) return alert("Preencha todos os campos!");
-    sendLoginRequest({ email, password });
-}
+function logar(){
+    var email = document.getElementById('email').value;
 
-function sendLoginRequest(body) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');  
-    headers.append('GET', 'POST', 'OPTIONS');
-    const options = {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(body)
-    }
-    
-    fetch(`${corsProxy}${apiUrl}/login`, options)
-    .then(response => response.json()).then(async Jres => {
-        //Here you can work with the JSON parsed response
-        if(Jres.statusCode && (Jres.statusCode === 400 || Jres.statusCode === 401)){
-            return alert("Email ou senha inválida!")
-        }
-        await sessionStorage.setItem("secret", Jres.access_token)
-        return location.href= "arq_form/form.html"
-    });
+    var senha = document.getElementById('senha').value;
 
-}
+    if(email == "admin" && senha == "admin"){
 
-function validate(email, password){
-    return email.length > 0 && password.length > 0
-}
-
-function showPassword() {
-    var x = document.getElementById("senha");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+        location.href = "index.html"
+    }else {
+        alert("E-mail ou senha incorretos")
     }
 }

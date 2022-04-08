@@ -3,6 +3,7 @@
 :root{
     --bg-gray: #ddd;
     --color-primary: #032541;
+    --color-primary-2: #042d4e;
     --white: #fff;
     --text-gray: #4a4a4a;
     --text-light-gray: #aaa;
@@ -17,7 +18,7 @@
 }
 
 body {
-    background-color: var(--white);
+    background-color: var(--bg-gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +32,7 @@ body {
     height: 450px;
     padding: 6px;
     display: flex;
-    box-shadow: 0 0 20px 0 darkgray;
+    box-shadow: 0 0 5px 0 darkgray;
     border-radius: 8px;
     flex-direction: column;
     align-items: center;
