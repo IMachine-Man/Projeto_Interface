@@ -17,7 +17,6 @@ document.querySelector('#btnSignUp').addEventListener('click', () => {
 })
 
 /* LOGAR */
-
 function logar(){
     var email = document.getElementById('email').value;
 
